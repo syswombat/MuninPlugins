@@ -2,4 +2,3 @@ Abstract PHP Class for Munin Plugins.
 
 Example plugins implementing this class:
 - Wetter
-- Sprit
