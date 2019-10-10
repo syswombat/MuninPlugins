@@ -11,6 +11,7 @@
 # Only the two Power Input is Power Monitored
 # the Powercontrol has Web access and the main part looks like this:
 # https://wombat3.kozo.ch/j/images/content/2018/08/epc8220.PNG
+# http://wiki.gude.info/FAQ_EPC_SNMP_Engl
 
 # How i do use the Gudo Power Control
 #====================================
