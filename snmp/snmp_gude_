@@ -50,7 +50,7 @@
 # ================================================================================
 
 COMMUNITY="public"
-MIB=/usr/share/snmp/mibs/an2graph_mib_125.mib
+MIB=/usr/share/snmp/mibs/GUDEADS-EPC822X-MIB.txt
 graph_period="second"
 SNMPCLIENT=`basename $0 | sed 's/^snmp_//g' | cut -d "_" -f1`
 SNMPGET="/usr/bin/snmpget -m $MIB -v2 -c $COMMUNITY $SNMPCLIENT"
