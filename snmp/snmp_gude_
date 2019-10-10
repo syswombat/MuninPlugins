@@ -1,9 +1,24 @@
 #!/bin/sh
 
-# snmp plugin Gude Power Controller
+# snmp plugin Gude Expert Power Control 8220 Serie
 # (C) Vincent Kocher <vkocher@kozo.ch>
 # 08.10.2019
 # Version 0.01
+
+# How i do use the Gudo Power Control
+#====================================
+# The Gude PowerControl has two Main Powerinput and each of them 6 Output
+# Only the two Power Input is Monitored
+# i use it like this:
+# MainPower Input to A
+# A.1 Power Output to UPC
+# UPC Output to Gude Powercontorl Input B
+# So A will Monitor all the Power used
+#    B will only show what the UPC Supported device use
+# UPC supported device would be like EdgeRouter, Firewall, DMZ-Switch, Main Server (with Bind, Mail, Web)
+
+# Coal of the Plugin
+# Monitoring the Powerconsumption of my Network/Server Rack 
 
 # to find out which values your device use type
 # snmpwalk -v2 -c public <IP> 1.3.6.1.4.1.5040
