@@ -5,14 +5,15 @@
 # 08.10.2019
 # Version 0.01
 
-# How i do use the Gudo Power Control
+# what is a Gudo Power Control
 #====================================
 # The Gude PowerControl has two Main Powerinput and each of them 6 switchable Output
 # Only the two Power Input is Power Monitored
 # the Powercontrol has Web access and the main part looks like this:
 # https://wombat3.kozo.ch/j/images/content/2018/08/epc8220.PNG
 
-# i use it like:
+# How i do use the Gudo Power Control
+#====================================
 # MainPower Input to B
 # B.1 Power Output to UPC
 # UPC Output to Gude Powercontrol Input A
@@ -23,15 +24,21 @@
 # Coal of the Plugin
 # Monitoring the Powerconsumption of the Network/Server in a Rack 
 
+#Löschen     apt install -y  snmp
+#Löschen     snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.2.1.1.1.0  | awk '{print $4,$5,$6,$7}'
+#Löschen     snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.2.1.1.3.0 
+#Löschen     http://wiki.gude.info/FAQ_EPC_SNMP
+
 # to MIB Variable values used and typ type
-# Power A:
+# Power A:					snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.2.1.1.1.0  | awk '{print $4,$5,$6,$7}'
 # Current ACs in MS in A: 
 # Power Active in W:
 # Total Energie Active in kWh (is fix and just goes Up):
 # Total Energie Active in kWh (goes up but could be reseted):
 
-
-# snmpwalk -v2 -c public <IP> 1.3.6.1.4.1.5040  
+# ================================================================================
+# the code to run...
+# ================================================================================
 
 COMMUNITY="public"
 MIB=/usr/share/snmp/mibs/an2graph_mib_125.mib
