@@ -21,8 +21,7 @@
 # UPC supported device would be like EdgeRouter, Firewall, DMZ-Switch, Main Server (with Bind, Mail, Web)
 
 # Coal of the Plugin
-# Monitoring the Powerconsumption of my Network/Server Rack 
-# 
+# Monitoring the Powerconsumption of the Network/Server in a Rack 
 
 # to MIB Variable values used and typ type
 # Power A:
