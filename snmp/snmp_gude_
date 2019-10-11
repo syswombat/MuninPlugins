@@ -2,7 +2,7 @@
 
 # snmp plugin Gude Expert Power Control 8220 Serie
 # (C) Vincent Kocher <vkocher@kozo.ch>
-# 08.10.2019
+# 08.10.2019 
 # Version 0.01
 
 # what is a Gudo Power Control
@@ -27,7 +27,7 @@
 
 # ==============================================================================
 # MIB Variablen used
-# to MIB Variable values used and typ type
+# to MIB Variable values used and type
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Device Name 
 # snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.2.1.1.1.0  | awk '{print $4,$5,$6,$7}'
@@ -44,16 +44,28 @@
 # A | snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.4.1.28507.38.1.5.1.2.1.18.1 | awk '{print $4,$5,$6,$7}'
 # B | snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.4.1.28507.38.1.5.1.2.1.18.2 | awk '{print $4,$5,$6,$7}'
 
-
 # Current AC rms
 # A | snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.4.1.28507.38.1.5.1.2.1.5.1 | awk '{print $4,$5,$6,$7}'
 # B | snmpwalk -v 2c -c public 10.147.42.31 1.3.6.1.4.1.28507.38.1.5.1.2.1.5.2 | awk '{print $4,$5,$6,$7}'
 
 # ================================================================================
+# Variable definition ...
+# ================================================================================
+
+CLIENTIP="10.147.42.31"
+COMMUNITY="public"
+VERSION="2c"
+POWERPREISkWh="16.24"
+DEVICENAME="/usr/bin/snmpget -V $VERSION -c $COMMUNITY 10.147.42.31 1.3.6.1.2.1.1.1.0 | awk '{print $4,$5,$6,$7}'"
+
+
+
+
+# ================================================================================
 # the code to run...
 # ================================================================================
 
-COMMUNITY="public"
+
 MIB=/usr/share/snmp/mibs/GUDEADS-EPC822X-MIB.txt
 graph_period="second"
 SNMPCLIENT=`basename $0 | sed 's/^snmp_//g' | cut -d "_" -f1`
