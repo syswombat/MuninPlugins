@@ -54,6 +54,18 @@
 # Variable definition ...
 # ================================================================================
 
+# is the target device FQDN?
+# if not add it in the hostfile 
+# ................... 
+
+# Community information
+# cd /etc/munin/plugin-conf.d/
+# check for a snmp* file if none do  touch snmp
+# vi snmp add the information like this 
+# [snmp_*]
+#    env.version 2
+#    env.community public
+
 CLIENTIP="10.147.42.31"
 COMMUNITY="public"
 VERSION="2c"
